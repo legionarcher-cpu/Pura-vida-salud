@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ==================================================
+         PÁGINA WEB DE PRESENTACIÓN · ACACHETE Logistics
+         Está aparte de la app (app.html). Todo lo suyo vive en la carpeta web/:
+           web/css/web.css      -> colores, estilos e IMÁGENES (se cambian ahí)
+           web/js/web.js        -> imágenes que se turnan, ventanas internas y visor
+           web/paginas/*.html   -> Productos, Visión y Contacto (se abren en ventana)
+         Imágenes: img/web/
+         ================================================== -->
+    <!-- ========== BUSCADORES (Google) Y REDES: título, descripción e imagen al compartir ==========
+         Título: ~60 letras; descripción: ~155. Imagen al compartir (1200x630): img/web/compartir.jpg.
+         Las demás piezas: robots.txt, sitemap.xml y _headers (raíz). Guía: docs/17-google.md -->
+    <title>Pura Vida Salud, Jorge Cordero</title>
+    <link rel="icon" type="image/png" href="img/icon-head.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="web/css/web.css?v=8">
+    <script src="web/js/web.js?v=3" defer></script>
+</head>
+<body>
+
+    <!-- ==================== CABECERA ==================== -->
+    <header class="sitio-cabecera">
+        <div class="contenedor">
+            <a href="#bienvenida" class="sitio-logo" aria-label="Pura Vida Salud, inicio">
+                <img src="img/logo.jpg" alt="Pura Vida Salud">
+            </a>
+            <button type="button" class="sitio-menu-boton" id="menuBoton" aria-label="Abrir menú" aria-expanded="false">
+                <i class="bi bi-list"></i>
+            </button>
+            <nav class="sitio-menu" id="menu" aria-label="Menú principal">
+                <a href="#bienvenida">Inicio</a>
+                <a href="#soluciones">Soluciones</a>
+                <button type="button" data-ventana="productos">Productos</button>
+                <button type="button" data-ventana="vision">Visión</button>
+                <button type="button" data-ventana="contacto">Contacto</button>
+                <button type="button" class="boton boton-naranja" data-ventana="app">
+                    <i class="bi bi-box-arrow-in-right"></i> Entrar a la app
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- ==================== BIENVENIDA ==================== -->
+        <section class="portada" id="bienvenida">
+            <!-- Imágenes que se turnan (se cambian en web/css/web.css: --img-portada-1, 2 y 3) -->
+            <div class="portada-imagen p1 activa"></div>
+            <div class="portada-imagen p2"></div>
+            <div class="portada-imagen p3"></div>
+
+            <div class="contenedor">
+                <div class="portada-contenido">
+                    <span class="portada-etiqueta">Productos que ayudan a mejorar su vida</span>
+                    <h1>Mejoran su energia, <span>cuidan de su salud</span> cuidan de los suyos</h1>
+                    <p>higiene Personal, Belleza, Energetizantes y más.</p>
+                    <ul class="portada-claves">
+                        <li><i class="bi bi-check-circle-fill"></i> Asesorias</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Entregas confirmadas</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Precios accesibles</li>
+                    </ul>
+                    <div class="portada-acciones">
+                        <a href="#soluciones" class="boton boton-naranja"><i class="bi bi-grid"></i> Ver soluciones</a>
+                        <button type="button" class="boton boton-claro" data-ventana="contacto">
+                            <i class="bi bi-calendar-check"></i> Escribame
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portada-puntos" id="portadaPuntos" aria-label="Cambiar imagen"></div>
+        </section>
+
+        <!-- ==================== SOLUCIONES (una página por tipo de empresa) ==================== -->
+        <section class="seccion" id="soluciones">
+            <div class="contenedor">
+                <div class="seccion-titulo">
+                    <span class="antetitulo">Soluciones</span>
+                    <h2>Ventajas y Soluciones nuestros productos</h2>
+                    <p>Funciones resuelven su día a día.</p>
+                </div>
+                <div class="soluciones">
+                    <button type="button" class="solucion" data-ventana="courier">
+                        <span class="solucion-icono"><i class="bi bi-bicycle"></i></span>
+                        <strong class="solucion-titulo">Mensajerías y couriers</strong>
+                        <span class="solucion-texto">Entregas con prueba y tarifas por distancia para cada comercio que atiende.</span>
+                        <span class="solucion-dirigido">
+                            <small>Ideal para</small>
+                            <span>Mensajerías</span><span>Couriers</span><span>Servicios de motorizados</span>
+                        </span>
+                        <span class="solucion-ir">Ver solución <i class="bi bi-arrow-right"></i></span>
+                    </button>
+                    <button type="button" class="solucion" data-ventana="distribuidora">
+                        <span class="solucion-icono"><i class="bi bi-shop"></i></span>
+                        <strong class="solucion-titulo">Distribuidoras y comercios</strong>
+                        <span class="solucion-texto">Tiendas, rutas, repartidores y cobros coordinados desde un solo lugar.</span>
+                        <span class="solucion-dirigido">
+                            <small>Ideal para</small>
+                            <span>Supermercados</span><span>Farmacias</span><span>Ferreterías</span><span>Distribuidoras</span>
+                        </span>
+                        <span class="solucion-ir">Ver solución <i class="bi bi-arrow-right"></i></span>
+                    </button>
+                    <button type="button" class="solucion" data-ventana="transporte">
+                        <span class="solucion-icono"><i class="bi bi-car-front"></i></span>
+                        <strong class="solucion-titulo">Transporte de personas</strong>
+                        <span class="solucion-texto">Reservas en línea con vehículo y conductor asignados automáticamente.</span>
+                        <span class="solucion-dirigido">
+                            <small>Ideal para</small>
+                            <span>Transporte de personal</span><span>Viajes programados</span><span>Clientes frecuentes</span>
+                        </span>
+                        <span class="solucion-ir">Ver solución <i class="bi bi-arrow-right"></i></span>
+                    </button>
+                </div>
+
+                <!-- Conozca más: abre cada ventana como una galería -->
+                <div class="galeria-sitio">
+                    <button type="button" class="foto" data-ventana="productos">
+                        <span class="foto-imagen"></span>
+                        <span class="foto-texto"><strong>Productos</strong><span>Cada función, explicada</span></span>
+                    </button>
+                    <button type="button" class="foto" data-ventana="vision">
+                        <span class="foto-imagen"></span>
+                        <span class="foto-texto"><strong>Visión</strong><span>Quiénes somos</span></span>
+                    </button>
+                    <!---
+                    <button type="button" class="foto" data-ventana="app">
+                        <span class="foto-imagen"></span>
+                        <span class="foto-texto"><strong>La app</strong><span>Entre con su usuario</span></span>
+                    </button> -->
+                    <button type="button" class="foto" data-ventana="contacto">
+                        <span class="foto-imagen"></span>
+                        <span class="foto-texto"><strong>Contacto</strong><span>Agende una demostración</span></span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== QUÉ HACE EL SOFTWARE + PREGUNTAS FRECUENTES ====================
+             Texto que Google lee (lo que se abre en ventanas no lo ve). Las preguntas deben ser
+             las mismas que las del bloque "FAQPage" del <head>: si se cambia una, cambiar las dos. -->
+        <section class="seccion seccion-clara" id="software-logistica">
+            <div class="contenedor">
+                <div class="seccion-titulo">
+                    <span class="antetitulo">Software de logística</span>
+                    <h2>Software de logística y control de entregas en Costa Rica</h2>
+                    <p>ACACHETE Logistics organiza todo el recorrido del pedido: desde que se registra en la tienda hasta que
+                    el piloto lo entrega, cobra y cierra su caja. Funciona en el navegador de la computadora y del celular.</p>
+                </div>
+
+                <div class="funciones-web">
+                    <article class="funcion-web">
+                        <i class="bi bi-box-seam"></i>
+                        <h3>Pedidos y despacho</h3>
+                        <p>Registro de pedidos con cliente, dirección y mercadería; slots de despacho y carga con evidencia.</p>
+                    </article>
+                    <article class="funcion-web">
+                        <i class="bi bi-signpost-split"></i>
+                        <h3>Pilotos, rutas y GPS</h3>
+                        <p>Asignación por ruta, día o semana, mapa de entregas, ubicación del piloto y marcas de horario con QR.</p>
+                    </article>
+                    <article class="funcion-web">
+                        <i class="bi bi-camera"></i>
+                        <h3>Entregas con prueba</h3>
+                        <p>Validación con QR o código, fotos de lo entregado y del comprobante de pago: efectivo, voucher o SINPE Móvil.</p>
+                    </article>
+                    <article class="funcion-web">
+                        <i class="bi bi-cash-stack"></i>
+                        <h3>Cobros y cierre de caja</h3>
+                        <p>Cobro contra entrega, verificación de SINPE y cierre de caja por piloto con faltantes, sobrantes y su motivo.</p>
+                    </article>
+                    <article class="funcion-web">
+                        <i class="bi bi-shop"></i>
+                        <h3>Distribuidoras</h3>
+                        <p>Productos con precios e IVA, bodega del día por ruta, venta en ruta, entregas parciales y devoluciones.</p>
+                    </article>
+                    <article class="funcion-web">
+                        <i class="bi bi-car-front"></i>
+                        <h3>Transporte de personas</h3>
+                        <p>Viajes programados con vehículo y conductor, franjas de precio, costos por vehículo y reportes.</p>
+                    </article>
+                </div>
+
+                <div class="faq-web">
+                    <h2>Preguntas frecuentes</h2>
+                    <details>
+                        <summary>¿Qué es <span data-nombre></span>?</summary>
+                        <p>Es un software de logística en la nube para controlar pedidos, pilotos, rutas, entregas y cobros desde
+                        el navegador o el celular, con la marca de su empresa.</p>
+                    </details>
+                    <details>
+                        <summary>¿Para qué tipo de empresas sirve?</summary>
+                        <p>Para distribuidoras, supermercados, farmacias, ferreterías y comercios con reparto, mensajerías y
+                        couriers, y empresas de transporte de personas en Costa Rica.</p>
+                    </details>
+                    <details>
+                        <summary>¿Cómo se comprueba que el pedido se entregó?</summary>
+                        <p>El piloto valida la entrega con el QR o un código del pedido y toma fotos de lo entregado y del
+                        comprobante de pago: el efectivo, el voucher de la tarjeta o el comprobante de SINPE Móvil.</p>
+                    </details>
+                    <details>
+                        <summary>¿Cómo se controla el dinero que cobran los pilotos?</summary>
+                        <p>Cada piloto tiene su caja: el sistema suma lo cobrado en efectivo, SINPE y tarjeta, la tienda verifica
+                        los SINPE con su comprobante y al cerrar la caja queda registrado cualquier faltante o sobrante con su motivo.</p>
+                    </details>
+                    <details>
+                        <summary>¿Hay que instalar algo?</summary>
+                        <p>No. Funciona en el navegador de la computadora o del celular, sin instalar nada. Ofrecemos una
+                        demostración sin costo con el logo y los colores de su empresa.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==================== PIE ==================== -->
+    <footer class="sitio-pie">
+        <div class="contenedor">
+            <div>
+                <img src="img/logo.jpg" alt="Pura Vida Salud">
+                <p>.</p>
+            </div>
+            <div>
+                <h4>Navegación</h4>
+                <ul>
+                    <li><button type="button" data-ventana="courier">Mensajerías y couriers</button></li>
+                    <li><button type="button" data-ventana="distribuidora">Distribuidoras y comercios</button></li>
+                    <li><button type="button" data-ventana="transporte">Transporte de personas</button></li>
+                    <li><button type="button" data-ventana="productos">Productos</button></li>
+                    <li><button type="button" data-ventana="vision">Visión</button></li>
+                    <li><button type="button" data-ventana="contacto">Contacto</button></li>
+                    <!--<li><button type="button" data-ventana="app">Entrar a la app</button></li>-->
+                </ul>
+            </div>
+            <div>
+                <h4>Contacto</h4>
+                <ul>
+                    <li><a data-correo-link href="#"><i class="bi bi-envelope"></i><span data-correo-texto></span></a></li>
+                    <li><a data-tel-link href="#"><i class="bi bi-telephone"></i> <span data-tel-texto></span></a></li>
+                    <li><a  data-whatsapp-link href="#" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i> WhatsApp</a></li>
+                </ul>
+            </div>
+            <p class="pie-derechos">© <span id="anio">2026</span> <span data-nombre></span>. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- ==================== VENTANA INTERNA ====================
+         Productos, Visión y Contacto (web/paginas/) y la App (app.html) se abren
+         aquí, creciendo desde lo que se tocó (web/js/web.js). -->
+    <div class="ventana" id="ventana" role="dialog" aria-modal="true" aria-labelledby="ventanaTitulo" hidden>
+        <div class="ventana-fondo" data-cerrar></div>
+        <div class="ventana-panel" id="ventanaPanel">
+            <div class="ventana-barra">
+                <h2 id="ventanaTitulo"></h2>
+                <a id="ventanaPestana" href="app.html" target="_blank" rel="noopener" hidden>
+                    <i class="bi bi-box-arrow-up-right"></i> <span class="texto-boton">Abrir en pestaña nueva</span>
+                </a>
+                <button type="button" class="ventana-cerrar" data-cerrar aria-label="Cerrar"><i class="bi bi-x-lg"></i></button>
+            </div>
+            <div class="ventana-cuerpo" id="ventanaCuerpo"></div>
+        </div>
+    </div>
+
+    <!-- ==================== VISOR DE PRODUCTOS (galería) ==================== -->
+    <div class="visor" id="visor" role="dialog" aria-modal="true" aria-labelledby="visorTitulo" hidden>
+        <div class="visor-fondo" data-cerrar-visor></div>
+        <button type="button" class="visor-cerrar" data-cerrar-visor aria-label="Cerrar"><i class="bi bi-x-lg"></i></button>
+        <button type="button" class="visor-flecha anterior" id="visorAnterior" aria-label="Producto anterior"><i class="bi bi-chevron-left"></i></button>
+        <div class="visor-marco">
+            <div class="visor-cabecera">
+                <span class="producto-icono" id="visorIcono"></span>
+                <div>
+                    <h3 id="visorTitulo"></h3>
+                    <p id="visorFrase"></p>
+                </div>
+                <span class="visor-contador" id="visorContador"></span>
+            </div>
+            <div class="visor-contenido" id="visorContenido"></div>
+            <div class="visor-pie" id="visorMiniaturas" aria-label="Productos"></div>
+        </div>
+        <button type="button" class="visor-flecha siguiente" id="visorSiguiente" aria-label="Producto siguiente"><i class="bi bi-chevron-right"></i></button>
+    </div>
+</body>
+</html>
